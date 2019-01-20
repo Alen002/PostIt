@@ -34,8 +34,8 @@ var userPasswordPrompt = prompt("Please enter your password");
 
 
 function signIn(name, password) {
-    for (index=0; index < database.length; index++ ) {
-        if (name === database[index].username && password === database[index].password ) {
+    for (let index=0; index < database.length; index++ ) {
+        if (database[index].username === name && database[index].password === password ) {
             return true; 
         } 
     }
@@ -46,8 +46,8 @@ var result = signIn(userNamePrompt,userPasswordPrompt);
 
 function showFeed(checkResult, userName) {
     if( checkResult === true) {
-        for (x=0; x < newsFeed.length; x++) {
-            if (userName === newsFeed[x].username) {
+        for (let index=0; index < newsFeed.length; index++) {
+            if (newsFeed[index].username === userName) {
                 console.log(newsFeed[index].timeline);
             }
         }
